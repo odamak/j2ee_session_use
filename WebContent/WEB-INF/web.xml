@@ -8,6 +8,10 @@
 		<servlet-name>Deconnexion</servlet-name>
 		<servlet-class>com.sdzee.servlets.Deconnexion</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Restriction</servlet-name>
+		<servlet-class>com.sdzee.servlets.Restriction</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>Connexion</servlet-name>
 		<url-pattern>/connexion</url-pattern>
@@ -15,6 +19,10 @@
 	<servlet-mapping>
 		<servlet-name>Deconnexion</servlet-name>
 		<url-pattern>/deconnexion</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Restriction</servlet-name>
+		<url-pattern>/restriction</url-pattern>
 	</servlet-mapping>
 
 </web-app>
