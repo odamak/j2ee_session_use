@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
-  <servlet>
+	<servlet>
 		<servlet-name>Connexion</servlet-name>
 		<servlet-class>com.sdzee.servlets.Connexion</servlet-class>
 	</servlet>
@@ -8,10 +8,10 @@
 		<servlet-name>Deconnexion</servlet-name>
 		<servlet-class>com.sdzee.servlets.Deconnexion</servlet-class>
 	</servlet>
-	<servlet>
-		<servlet-name>Restriction</servlet-name>
-		<servlet-class>com.sdzee.servlets.Restriction</servlet-class>
-	</servlet>
+	<filter>
+		<filter-name>RestrictionFilter</filter-name>
+		<filter-class>com.sdzee.filters.RestrictionFilter</filter-class>
+	</filter>
 	<servlet-mapping>
 		<servlet-name>Connexion</servlet-name>
 		<url-pattern>/connexion</url-pattern>
@@ -20,9 +20,8 @@
 		<servlet-name>Deconnexion</servlet-name>
 		<url-pattern>/deconnexion</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Restriction</servlet-name>
-		<url-pattern>/restriction</url-pattern>
-	</servlet-mapping>
-
+	<filter-mapping>
+		<filter-name>RestrictionFilter</filter-name>
+		<url-pattern>/restreint/*</url-pattern>
+	</filter-mapping>
 </web-app>
