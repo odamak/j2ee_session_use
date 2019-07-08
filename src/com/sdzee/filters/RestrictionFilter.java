@@ -25,6 +25,13 @@ public class RestrictionFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
+        /* Non-filtrage des ressources statiques */
+        String chemin = request.getRequestURI().substring( request.getContextPath().length() );
+        if ( chemin.startsWith( "/inc" ) ) {
+            chain.doFilter( request, response );
+            return;
+        }
+
         /* Récupération de la session depuis la requête */
         HttpSession session = request.getSession();
 
